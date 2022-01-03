@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Playfair+Display+SC&display=swap');
 /* RESET */
 * {
     margin: 0;
@@ -26,6 +26,24 @@ body {
     display: grid;
     grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
 }
+
+.grid-section {
+    grid-column: 2/4;
+    padding: 10px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 90px 300px 1fr;
+    gap: 20px;
+    margin-bottom: 4rem;
+}
+
+.titulo {
+    font-family: 'Playfair Display SC', georgia;
+    font-weight: 400;
+    font-size: 6rem;
+    line-height: 1;
+    grid-column: 1/4;
+}
 /* HEADER */
 .menu {
     grid-column: 3/5;
@@ -51,13 +69,116 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
+/* ANIMAIS */
+.animais-lista {
+    height: 370px;
+    overflow-y: scroll;
+    grid-column: 2;
+}
 
-.grid-section {
+.animais-lista::-webkit-scrollbar {
+    width: 18px;
+}
+
+.animais-lista::-webkit-scrollbar-thumb {
+    background: #fb5;
+    border-left: 4px solid #faf6ed;
+    border-bottom: 4px solid #faf6ed;
+}
+
+.animais-lista::-webkit-scrollbar-track {
+    background: #faf6ed;
+}
+
+.animais-descricao {
+    grid-column: 3;
+}
+
+.animais-descricao h2 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    color: #e54;
+}
+
+.animais-descricao h2::before {
+    content: '';
+    display: inline-block;
+    width: 40px;
+    height: 10px;
+    margin-right: 10px;
+    background: #fb5;
+}
+
+.animais-descricao p {
+    font-family: Helvetica, Arial sans-serif;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.animais-descricao section {
+    margin-bottom: 3rem;
+}
+/* FAQ */
+.faq-lista {
     grid-column: 2/4;
-    padding: 10px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 90px 300px 1fr;
-    gap: 20px;
-    margin-bottom: 4rem;
+}
+
+.faq-lista dt {
+    font-weight: bold;
+    font-family: 'IBM Plex Mono', monospace;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: #e54;
+}
+
+.faq-lista dt::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    margin-right: 10px;
+    background: #fb5;
+}
+
+.faq-lista dd {
+    font-family: Helvetica, Arial sans-serif;
+    margin-bottom: 0.5rem;
+    margin-left: 30px;
+}
+/* CONTATO */
+.contato-mapa {
+    grid-column: 2;
+}
+
+.contato-dados {
+    grid-column: 3;
+}
+
+.contato-dados li {
+    margin-bottom: 1rem;
+    font-family: Helvetica, Arial sans-serif;
+}
+
+.contato-dados li::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    margin-right: 10px;
+    background: #fb5;
+}
+/* COPY */
+.copy {
+    grid-column: 3/5;
+    margin-bottom: 2rem;
+    background: #fb5;
+}
+
+.copy p {
+    padding: 20px;
+    font-weight: bold;
+    font-family: 'IBM Plex Mono', monospace;
 }
